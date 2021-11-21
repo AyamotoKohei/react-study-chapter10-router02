@@ -1,11 +1,11 @@
-import { VFC } from 'react';
-import { useHistory } from 'react-router';
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HomeButton from 'components/molecules/HomeButton';
 
-const EnhancedHomeButton: VFC = () => {
-  const history = useHistory();
+const EnhancedHomeButton: FC = () => {
+  const navigate = useNavigate();
 
-  return <HomeButton redirectToHome={() => history.push('/')} />;
+  return <HomeButton redirectToHome={() => navigate('/')} />;
 };
 
 export default EnhancedHomeButton;

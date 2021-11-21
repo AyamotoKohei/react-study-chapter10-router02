@@ -1,25 +1,15 @@
-import { VFC } from 'react';
-import { Redirect, Route, Switch, RouteComponentProps } from 'react-router';
+import { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 import { Divider } from 'semantic-ui-react';
 
-import AllCharacters from 'containers/templates/AllCharacters';
-import SchoolCharacters from 'containers/templates/SchoolCharacters';
 import HomeButton from 'containers/molecules/HomeButton';
 
-const Characters: VFC<RouteComponentProps> = ({ match }) => (
+const Characters: FC = () => (
   <>
     <header>
       <h1>『SLAM DUNK』登場人物</h1>
     </header>
-    <Switch>
-      <Route exact path={`${match.path}`}>
-        <AllCharacters />
-      </Route>
-      <Route path={`${match.path}/:schoolCode`}>
-        <SchoolCharacters />
-      </Route>
-      <Redirect to="/" />
-    </Switch>
+    <Outlet />
     <Divider hidden />
     <HomeButton />
   </>
