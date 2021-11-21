@@ -13,7 +13,7 @@ const Home: VFC = () => (
     <header>
       <h1>『SLAM DUNK』作品紹介</h1>
     </header>
-    <Container className="summary">
+    <Container class="summary">
       <p>
         神奈川県立湘北高校に入学した赤い髪の不良少年である桜木花道は、中学時代に50人の女性から振られ続けたうえに、最後に振られた女性が「バスケ部の小田君」に好意を持っていたため、バスケットボールが大嫌いになっていた。
       </p>

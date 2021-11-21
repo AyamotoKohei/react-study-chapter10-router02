@@ -1,15 +1,16 @@
 import { VFC } from 'react';
-import { Navigate, useLocation, useParams } from 'react-router-dom';
+import { Redirect, useLocation, useParams } from 'react-router-dom';
 
 import SchoolCharacters from 'components/templates/SchoolCharacters';
 import { charactersData } from 'data/characters';
 
 const EnhancedSchoolCharacters: VFC = () => {
-  const { schoolCode = '' } = useParams();
+  const { schoolCode } = useParams<{ schoolCode: string }>();
+  const schoolCodeList = Object.keys(charactersData);
+
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const isLoading = !!queryParams.get('loading');
-  const schoolCodeList = Object.keys(charactersData);
 
   if (schoolCodeList.includes(schoolCode)) {
     const { school, players } = charactersData[schoolCode];
@@ -23,7 +24,7 @@ const EnhancedSchoolCharacters: VFC = () => {
     );
   }
 
-  return <Navigate to="/" replace />;
+  return <Redirect to="/" />;
 };
 
 export default EnhancedSchoolCharacters;

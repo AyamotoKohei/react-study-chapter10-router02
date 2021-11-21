@@ -2,7 +2,7 @@ import { VFC } from 'react';
 import { Helmet } from 'react-helmet';
 import { Header } from 'semantic-ui-react';
 
-import CharactersList from 'components/organisms/CharactersList';
+import CharactersList from 'components/organisms/CharacterList';
 import { Character } from 'data/characters';
 
 type Props = {

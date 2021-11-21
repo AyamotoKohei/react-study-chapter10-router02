@@ -8,6 +8,7 @@ const EnhancedAllCharacters: VFC = () => {
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const isLoading = !!queryParams.get('loading');
+
   const characters = Object.values(charactersData)
     .map((v) => v.players)
     .flat()
